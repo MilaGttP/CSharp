@@ -14,7 +14,13 @@ namespace Introduction
         }
         static void TestHW()
         {
-
+            FizzBuzz();
+            Percents();
+            SingleNumber();
+            ReverseConcreteNumbers();
+            Date();
+            Degrees();
+            EvenNumbers();
         }
         static void Main()
         {
