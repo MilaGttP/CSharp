@@ -5,9 +5,10 @@ namespace ArraysStrings
     {
         static void Main()
         {
-            //ABArrays();
-            //TwoDimensional5On5();
-            CaesarCipher();
+            //ABArraysTest();
+            //TwoDimensional5On5Test();
+            //CaesarCipherTest();
+            MatrixOperationsTest();
         }
     }
 }

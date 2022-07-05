@@ -43,21 +43,39 @@ namespace ArraysStrings
             if (MinOneD(5, A) == MinTwoD(3, 4, B)) return MinOneD(5, A);
             else return 0;
         }
+        public static int SumOneD(int[] A)
+        {
+            int sum = A[0];
+            foreach (var value in A) sum += value;
+            return sum;
+        }
+        public static int SumTwoD(int[,] B)
+        {
+            int sum = B[0, 0];
+            foreach (var value in B) sum += value;
+            return sum;
+        }
         public static int Sum(int[] A, int[,] B)
         {
-            int sumA = A[0], sumB = B[0, 0];
-            foreach (var value in A) sumA += value;
-            foreach (var value in B) sumB += value;
-            int sum = sumA + sumB;
+            int sum = SumOneD(A) + SumTwoD(B);
             return sum;
+        }
+        public static int MultiplyOneD(int[] A)
+        {
+            int prod = 1;
+            for (int i = 0; i < A.GetLength(0); i++) prod *= A[i];
+            return prod;
+        }
+        public static int MultiplyTwoD(int[,] B)
+        {
+            int prod = 1;
+            for (int i = 0; i < B.GetLength(0); i++)
+                for (int j = 0; j < B.GetLength(1); j++) prod *= B[i, j];
+            return prod;
         }
         public static int Multiply(int[] A, int[,] B)
         {
-            int prodA = 1, prodB = 1; ;
-            for (int i = 0; i < A.GetLength(0); i++) prodA *= A[i];
-            for (int i = 0; i < B.GetLength(0); i++)
-                for (int j = 0; j < B.GetLength(1); j++) prodB *= B[i, j];
-            int prod = prodA * prodB;
+            int prod = MultiplyOneD(A) * MultiplyTwoD(B);
             return prod;
         }
         public static int EvenA(int[] A)
@@ -81,6 +99,66 @@ namespace ArraysStrings
                 }
             }
             return sum;
+        }
+        public static System.Text.StringBuilder Cipher(int key, string ? str)
+        {
+            string[] abc = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" }; 
+            int y, num;
+            System.Text.StringBuilder cipher = new System.Text.StringBuilder("");
+            for (int i = 0; i < str.Length; ++i)
+            {
+                string tmp = str[i].ToString();
+                for (int j = 0; j <= 51; j++)
+                {
+                    if (tmp == abc[j])
+                    {
+                        num = j;
+                        y = (num + key) % 52;
+                        cipher.Insert(cipher.Length, abc[y]);
+                    }
+                }
+            }
+            return cipher;
+        }
+        public static System.Text.StringBuilder DeCipher(int key, string? str)
+        {
+            string[] abc = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+            System.Text.StringBuilder deCipher = new System.Text.StringBuilder("");
+            int y, num;
+            for (int i = 0; i < str.Length; ++i)
+            {
+                string tmp = str[i].ToString();
+                for (int j = 0; j <= 51; j++)
+                {
+                    if (tmp == abc[j])
+                    {
+                        num = j;
+                        y = num - key;
+                        if (y < 0) y += 52;
+                        deCipher.Insert(deCipher.Length, abc[y]);
+                    }
+                }
+            }
+            return deCipher;
+        }
+        public static int MultMatrixOnNum(int num, int[,] matrix)
+        {
+            int prod = 1;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+                for (int j = 0; j < matrix.GetLength(1); j++) prod = matrix[i, j] * num;
+            return prod;
+        }
+        public static int MatrixSum(int[,] firstM, int[,] secondM)
+        {
+            int sum = SumTwoD(firstM) + SumTwoD(secondM);
+            return sum;
+        }
+        public static int MatrixMultiply(int[,] firstM, int[,] secondM)
+        {
+            int multiply = MultiplyTwoD(firstM) * MultiplyTwoD(secondM);
+            return multiply;
         }
     }
 }

@@ -5,7 +5,7 @@ namespace ArraysStrings
 {
     internal partial class ArraysStrings
     {
-        static void ABArrays()
+        static void ABArraysTest()
         {
             int[] A = new int[5];
             int[,] B = new int[3, 4];
@@ -30,7 +30,7 @@ namespace ArraysStrings
             WriteLine($"Even elements sum in A array: {EvenA(A)}");
             WriteLine($"Uneven elements sum in B array: {UnevenB(B)}");
         }
-        static void TwoDimensional5On5()
+        static void TwoDimensional5On5Test()
         {
             int[,] arr = new int[5, 5];
             Random random = new Random();
@@ -52,9 +52,62 @@ namespace ArraysStrings
                     if (arr[i, j] < max && arr[i, j] > min) sum += arr[i, j];
             WriteLine($"Sum is: {sum}");
         }
-        static void CaesarCipher()
+        static void CaesarCipherTest()
         {
-
+            string wordToCipher, wordToDeCipher; int keyToCipher, keyToDeCipher;
+            Write("Enter a word to cipher -> "); wordToCipher = Convert.ToString(ReadLine());
+            Write("Enter a key -> "); keyToCipher = Convert.ToInt32(ReadLine());
+            WriteLine($"Your word before cipher: {wordToCipher} , Your key: {keyToCipher}");
+            WriteLine($"Your word after cipher: {Cipher(keyToCipher, wordToCipher)}");
+            Write("Enter a word to decipher -> "); wordToDeCipher = Convert.ToString(ReadLine());
+            Write("Enter a key -> "); keyToDeCipher = Convert.ToInt32(ReadLine());
+            WriteLine($"Your word before decipher: {wordToDeCipher} , Your key: {keyToDeCipher}");
+            WriteLine($"Your word after decipher: {DeCipher(keyToDeCipher, wordToDeCipher)}");
+        }
+        static void MatrixOperationsTest()
+        {
+            int[,] firstMatrix = new int[5, 5];
+            int[,] secondMatrix = new int[5, 5];
+            Random random = new Random();
+            for (int i = 0; i < 5; i++)
+                for (int j = 0; j < 5; j++)
+                    firstMatrix[i, j] = random.Next(1, 20);
+            WriteLine("Your first matrix:  ");
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                    Write($" {firstMatrix[i, j]}");
+                WriteLine();
+            }
+            WriteLine();
+            for (int i = 0; i < 5; i++)
+                for (int j = 0; j < 5; j++)
+                    secondMatrix[i, j] = random.Next(1, 20);
+            WriteLine("Your second matrix:  ");
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                    Write($" {secondMatrix[i, j]}");
+                WriteLine();
+            }
+            WriteLine();
+            Write("What do you want to do with this?\n 1 - Multiply matrix on number\n 2 - Sum two matrixes\n 3 - Multiply two matrixes\n Enter -> ");
+            int tmp = Convert.ToInt32(ReadLine());
+            switch (tmp)
+            {
+                case 1:
+                    Write("Enter number -> "); int num = Convert.ToInt32(ReadLine());
+                    WriteLine($"Result of multiplying: {MultMatrixOnNum(num, firstMatrix)}");
+                    break;
+                case 2:
+                    WriteLine($"Result of summing: {MatrixSum(firstMatrix, secondMatrix)}");
+                    break;
+                case 3:
+                    WriteLine($"Result of multiplying: {MatrixMultiply(firstMatrix, secondMatrix)}");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
