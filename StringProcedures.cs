@@ -87,8 +87,7 @@ namespace ArraysStrings
                 {
                     if (newText[i] == newWord[j])
                     {
-                        int len = newWord.ToString().Length;
-                        for (int k = 0; k < len; ++k) newText.Replace(newText[k], '*');
+                        for (int k = 0; k < newWord.Length; ++k) newText.Replace(newText[k], '*');
                         counter++;
                     }
                 }
