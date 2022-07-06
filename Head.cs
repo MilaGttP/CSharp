@@ -5,12 +5,12 @@ namespace ArraysStrings
     {
         static void Main()
         {
-            //ABArraysTest();
-            //TwoDimensional5On5Test();
-            //CaesarCipherTest();
-            //MatrixOperationsTest();
-            //MathOperationsTest();
-            //LowerUpperCasesTest();
+            ABArraysTest();
+            TwoDimensional5On5Test();
+            CaesarCipherTest();
+            MatrixOperationsTest();
+            MathOperationsTest();
+            LowerUpperCasesTest();
             CheckingTextTest();
         }
     }
