@@ -35,7 +35,7 @@ namespace ArraysStrings
         }
         public static int Maximum(int[] A, int[,] B)
         {
-            if(MaxOneD(5, A) == MaxTwoD(3, 4, B)) return MaxOneD(5, A);
+            if (MaxOneD(5, A) == MaxTwoD(3, 4, B)) return MaxOneD(5, A);
             else return 0;
         }
         public static int Minimum(int[] A, int[,] B)
@@ -81,7 +81,7 @@ namespace ArraysStrings
         public static int EvenA(int[] A)
         {
             int sum = 0;
-            for (int i = 0; i < A[0]; i++) 
+            for (int i = 0; i < A[0]; i++)
                 if (A[i] % 2 == 0) sum += A[i];
             return sum;
         }
@@ -99,49 +99,6 @@ namespace ArraysStrings
                 }
             }
             return sum;
-        }
-        public static System.Text.StringBuilder Cipher(int key, string ? str)
-        {
-            string[] abc = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" }; 
-            int y, num;
-            System.Text.StringBuilder cipher = new System.Text.StringBuilder("");
-            for (int i = 0; i < str.Length; ++i)
-            {
-                string tmp = str[i].ToString();
-                for (int j = 0; j <= 51; j++)
-                {
-                    if (tmp == abc[j])
-                    {
-                        num = j;
-                        y = (num + key) % 52;
-                        cipher.Insert(cipher.Length, abc[y]);
-                    }
-                }
-            }
-            return cipher;
-        }
-        public static System.Text.StringBuilder DeCipher(int key, string? str)
-        {
-            string[] abc = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
-            System.Text.StringBuilder deCipher = new System.Text.StringBuilder("");
-            int y, num;
-            for (int i = 0; i < str.Length; ++i)
-            {
-                string tmp = str[i].ToString();
-                for (int j = 0; j <= 51; j++)
-                {
-                    if (tmp == abc[j])
-                    {
-                        num = j;
-                        y = num - key;
-                        if (y < 0) y += 52;
-                        deCipher.Insert(deCipher.Length, abc[y]);
-                    }
-                }
-            }
-            return deCipher;
         }
         public static int MultMatrixOnNum(int num, int[,] matrix)
         {

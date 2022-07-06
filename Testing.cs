@@ -109,5 +109,23 @@ namespace ArraysStrings
                     break;
             }
         }
+        static void MathOperationsTest()
+        {
+            Write("Enter your expression -> "); 
+            string expression = Convert.ToString(ReadLine());
+            Write($"Result: {MathOper(expression)}");
+        }
+        static void LowerUpperCasesTest()
+        {
+            Write("Enter your sentences -> ");
+            string text = Convert.ToString(ReadLine());
+            WriteLine($"Your new sentences: {LowerUpperCases(text)}");
+        }
+        static void CheckingTextTest()
+        {
+            Write("Enter your text -> "); string text = Convert.ToString(ReadLine());
+            Write("Enter a forbidden word -> "); string word = Convert.ToString(ReadLine());
+            WriteLine(CheckingText(text, word));
+        }
     }
 }
