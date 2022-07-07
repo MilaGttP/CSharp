@@ -80,15 +80,15 @@ namespace ArraysStrings
         {
             StringBuilder newText = new StringBuilder(text);
             StringBuilder newWord = new StringBuilder(word);
-            int counter = 0;
-            for (int i = 1; i < newText.Length; ++i)
+            int counter = -1;
+            for (int i = 0; i < newText.Length; ++i)
             {
-                for (int j = 1; j < newWord.Length; ++j)
+                for (int j = 0; j < newWord.Length; ++j)
                 {
                     if (newText[i] == newWord[j])
                     {
-                        for (int k = 0; k < newWord.Length; ++k) newText.Replace(newText[k], '*');
                         counter++;
+                        newText.Replace(newText[j], '*');
                     }
                 }
             }
