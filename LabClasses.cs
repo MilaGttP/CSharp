@@ -5,11 +5,11 @@ namespace Classes
 {
     class City
     {
-        public string CityName { get; set; }
-        public string CountryName { get; set; }
-        public int Population { get; set; }
-        public int PhoneCode { get; set; }
-        public string AreasName { get; set; }
+        public string ? CityName { get; set; }
+        public string ? CountryName { get; set; }
+        public int ? Population { get; set; }
+        public int ? PhoneCode { get; set; }
+        public string ? AreasName { get; set; }
         public City()
         {
             CityName = null;
@@ -18,7 +18,7 @@ namespace Classes
             PhoneCode = 0;
             AreasName = null;
         }
-        public City(string ? CityName, string ? CountryName, int Population, int PhoneCode, string AreasName)
+        public City(string ? CityName, string ? CountryName, int ? Population, int ? PhoneCode, string ? AreasName)
         {
             this.CityName = CityName;
             this.CountryName = CountryName;
@@ -42,12 +42,12 @@ namespace Classes
     }
     class Employer
     {
-        public string FullName { get; set; }
-        public string Birthday { get; set; }
-        public int Phone { get; set; }
-        public string Email { get; set; }
-        public string Position { get; set; }
-        public string WorkDescription { get; set; }
+        public string ? FullName { get; set; }
+        public string ? Birthday { get; set; }
+        public int ? Phone { get; set; }
+        public string ? Email { get; set; }
+        public string ? Position { get; set; }
+        public string ? WorkDescription { get; set; }
         public Employer()
         {
             FullName = null;
@@ -57,7 +57,7 @@ namespace Classes
             Position = null;
             WorkDescription = null;
         }
-        public Employer(string ? FullName, string ? Birthday, int Phone, string ? Email, string ? Position, string ? WorkDescription)
+        public Employer(string ? FullName, string ? Birthday, int ? Phone, string ? Email, string ? Position, string ? WorkDescription)
         {
             this.FullName = FullName; 
             this.Birthday = Birthday;
@@ -83,10 +83,10 @@ namespace Classes
     }
     class Airplane
     {
-        public string AirplaneName { get; set; }
-        public string AuthorName { get; set; }
-        public int Year { get; set; }
-        public string Type { get; set; }
+        public string ? AirplaneName { get; set; }
+        public string ? AuthorName { get; set; }
+        public int ? Year { get; set; }
+        public string ? Type { get; set; }
         public Airplane()
         {
             AirplaneName = null;
@@ -94,7 +94,7 @@ namespace Classes
             Year = 0;
             Type = null;
         }
-        public Airplane(string? AirplaneName, string? AuthorName, int Year, string? Type)
+        public Airplane(string ? AirplaneName, string ? AuthorName, int ? Year, string ? Type)
         {
             this.AirplaneName = AirplaneName;
             this.AuthorName = AuthorName;

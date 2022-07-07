@@ -17,7 +17,10 @@ namespace Classes
         {
             //SquareSymbolTest();
             //PalindromTest();
-            FilterArrayTest();
+            //FilterArrayTest();
+            //ClassWebsiteTest();
+            //ClassMagazineTest();
+            ClassShopTest();
         }
         static void Main()
         {
