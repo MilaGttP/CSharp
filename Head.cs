@@ -15,11 +15,13 @@ namespace Classes
         }
         static void TestHW()
         {
-
+            //SquareSymbolTest();
+            //PalindromTest();
+            FilterArrayTest();
         }
         static void Main()
         {
-            TestLab();
+            //TestLab();
             TestHW();
         }
     }

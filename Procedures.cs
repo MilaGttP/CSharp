@@ -3,6 +3,7 @@ namespace Classes
 {
     internal partial class Classes
     {
+        // --- Lab ---
         static void RangeMultiply(int begin, int completion, out int res)
         {
             res = 1;
@@ -49,6 +50,40 @@ namespace Classes
                 }
             }
             return arr;
+        }
+
+        // --- Homework ---
+        static void FillAndShowSquare(int side, string symbol)
+        {
+            string[,] square = new string[side, side];
+            for (int i = 0; i < side; i++)
+            {
+                for (int j = 0; j < side; j++)
+                {
+                    square[i, j] = symbol;
+                    Console.Write($"{square[i, j]}");
+                }
+                Console.WriteLine();
+            }
+        }
+        static bool IsPalindrom(int number)
+        {
+            var str = number.ToString();
+            var str2 = new string(number.ToString().Reverse().ToArray());
+            return str == str2;
+        }
+        static string FilteringArray(string origin, string forFilter)
+        {
+            System.Text.StringBuilder original = new System.Text.StringBuilder(origin);
+            System.Text.StringBuilder filtering = new System.Text.StringBuilder(forFilter);
+            for (int i = 0; i < original.Length; i++)
+            {
+                for(int j = 0; j < filtering.Length; j++)
+                {
+                    if (original[i] == filtering[j]) original[i] = ' ';
+                }
+            }
+            return original.ToString();
         }
     }
 }

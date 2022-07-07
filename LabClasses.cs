@@ -28,11 +28,11 @@ namespace Classes
         }
         public void Enter()
         {
-            Write("Enter city name -> "); CityName = Convert.ToString(ReadLine());
-            Write("Enter country name -> "); CountryName = Convert.ToString(ReadLine());
+            Write("Enter city name -> "); CityName = ReadLine();
+            Write("Enter country name -> "); CountryName = ReadLine();
             Write("Enter population -> "); Population = Convert.ToInt32(ReadLine());
             Write("Enter phone code -> "); PhoneCode = Convert.ToInt32(ReadLine());
-            Write("Enter areas -> "); AreasName = Convert.ToString(ReadLine());
+            Write("Enter areas -> "); AreasName = ReadLine();
         }
         public override string ToString()
         {
@@ -68,12 +68,12 @@ namespace Classes
         }
         public void Enter()
         {
-            Write("Enter your full name -> "); FullName = Convert.ToString(ReadLine());
-            Write("Enter your birthday -> "); Birthday = Convert.ToString(ReadLine());
+            Write("Enter your full name -> "); FullName = ReadLine();
+            Write("Enter your birthday -> "); Birthday = ReadLine();
             Write("Enter your phone -> "); Phone = Convert.ToInt32(ReadLine());
-            Write("Enter your email -> "); Email = Convert.ToString(ReadLine());
-            Write("Enter your position -> "); Position = Convert.ToString(ReadLine());
-            Write("Enter work description -> "); WorkDescription = Convert.ToString(ReadLine());
+            Write("Enter your email -> "); Email = ReadLine();
+            Write("Enter your position -> "); Position = ReadLine();
+            Write("Enter work description -> "); WorkDescription = ReadLine();
         }
         public override string ToString()
         {
@@ -103,10 +103,10 @@ namespace Classes
         }
         public void Enter()
         {
-            Write("Enter airplane name -> "); AirplaneName = Convert.ToString(ReadLine());
-            Write("Enter manufacturer name -> "); AuthorName = Convert.ToString(ReadLine());
+            Write("Enter airplane name -> "); AirplaneName = ReadLine();
+            Write("Enter manufacturer name -> "); AuthorName = ReadLine();
             Write("Enter year -> "); Year = Convert.ToInt32(ReadLine());
-            Write("Enter type -> "); Type = Convert.ToString(ReadLine());
+            Write("Enter type -> "); Type = ReadLine();
         }
         public override string ToString()
         {

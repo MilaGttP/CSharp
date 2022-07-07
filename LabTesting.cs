@@ -7,7 +7,6 @@ namespace Classes
     {
         static void TestRangeMultiply()
         {
-            WriteLine("\n --- TestRangeMultiply --- ");
             int begin = 0, completion = 0, res = 0;
             Write("Enter range`s begin -> ");
             begin = Convert.ToInt32(ReadLine());
