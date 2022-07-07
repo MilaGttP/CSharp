@@ -80,7 +80,7 @@ namespace ArraysStrings
         {
             StringBuilder newText = new StringBuilder(text);
             StringBuilder newWord = new StringBuilder(word);
-            int counter = -1;
+            int counter = 0;
             for (int i = 0; i < newText.Length; ++i)
             {
                 for (int j = 0; j < newWord.Length; ++j)
