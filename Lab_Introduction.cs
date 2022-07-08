@@ -28,8 +28,7 @@ namespace Introduction
             foreach (int value in arr)
                 mult *= value;
             WriteLine($"Multiply is: {mult}");
-            int sum = arr.Sum();
-            WriteLine($"Sum is: {sum}");
+            WriteLine($"Sum is: {arr.Sum()}");
             WriteLine($"Minimal value is: {arr.Min()}");
             WriteLine($"Maximum value is: {arr.Max()}");
         }
@@ -68,8 +67,11 @@ namespace Introduction
             int a, b;
             Write($"Enter a -> ");
             a = Convert.ToInt32(ReadLine());
+            if (a < 0) throw new ArithmeticException("A value isn`y positive!");
             Write($"Enter b -> ");
             b = Convert.ToInt32(ReadLine());
+            if (b < 0) throw new ArithmeticException("B value isn`y positive!");
+            if (a > b) throw new ArithmeticException("A value > B value!");
             for (WriteLine(); a <= b; WriteLine(), a++)
                 for (int i = 1; i <= a; i++)
                     Write("{0}", a);
