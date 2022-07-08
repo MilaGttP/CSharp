@@ -58,13 +58,15 @@ namespace Introduction
         static void Date()
         {
             WriteLine("\n --- Date --- ");
-            Write("Enter a current month -> ");
-            int month = Convert.ToInt32(ReadLine());
-            if (month == 0 || month > 12 || month < 0) throw new Exception("Wrong month!");
-            else if (month >= 3 && month <= 5) WriteLine("It`s spring now!");
-            else if (month >= 6 && month <= 8) WriteLine("It`s summer now!");
-            else if (month >= 9 && month <= 11) WriteLine("It`s autumn now!");
-            else WriteLine("It`s winter now!");
+            Write("Enter date -> "); string dateTime = ReadLine();
+            DateTime date = DateTime.Parse(dateTime);
+            string month = date.Month.ToString();
+            if (date.Month == 0 || date.Month > 12 || date.Month < 0) throw new Exception("Wrong month!");
+            else if (date.Month >= 3 && date.Month <= 5) month = "Spring";
+            else if (date.Month >= 6 && date.Month <= 8) month = "Summer";
+            else if (date.Month >= 9 && date.Month <= 11) month = "Autumn";
+            else month = "Winter";
+            WriteLine($" Day: {date.Day}\n Day of the week: {date.DayOfWeek}\n Month: {date.Month} ({month})\n Year: {date.Year}");
         }
         static void Degrees()
         {
