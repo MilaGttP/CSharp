@@ -1,11 +1,9 @@
 ﻿
-using System.Text;
-
 namespace ArraysStrings
 {
-    internal partial class ArraysStrings
+    public partial class Procedures
     {
-        public static System.Text.StringBuilder Cipher(int key, string? str)
+        public static string Cipher(int key, string? str)
         {
             string[] abc = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
                 "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
@@ -24,9 +22,9 @@ namespace ArraysStrings
                     }
                 }
             }
-            return cipher;
+            return cipher.ToString();
         }
-        public static System.Text.StringBuilder DeCipher(int key, string? str)
+        public static string DeCipher(int key, string? str)
         {
             string[] abc = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
                 "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
@@ -46,7 +44,7 @@ namespace ArraysStrings
                     }
                 }
             }
-            return deCipher;
+            return deCipher.ToString();
         }
         public static int MathOper(string exp)
         {
@@ -64,22 +62,23 @@ namespace ArraysStrings
         }
         public static string LowerUpperCases(string text)
         {
-            StringBuilder newText = new StringBuilder(text);
+            System.Text.StringBuilder newText = new System.Text.StringBuilder(text);
             newText[0] = Char.ToUpper(newText[0]);
-            for(int i = 1; i < text.Length; i++)
+            for (int i = 1; i < text.Length; i++)
             {
-                if(newText[i] == '.')
+                if (newText[i] == '.')
                 {
                     newText[i + 2] = Char.ToUpper(newText[i + 2]);
                     i++;
                 }
+                else throw new Exception("Your sentence is correct!");
             }
             return newText.ToString();
         }
         public static string CheckingText(string text, string word)
         {
-            StringBuilder newText = new StringBuilder(text);
-            StringBuilder newWord = new StringBuilder(word);
+            System.Text.StringBuilder newText = new System.Text.StringBuilder(text);
+            System.Text.StringBuilder newWord = new System.Text.StringBuilder(word);
             int counter = 0;
             for (int i = 0; i < newText.Length; ++i)
             {
@@ -90,6 +89,7 @@ namespace ArraysStrings
                         counter++;
                         newText.Replace(newText[j], '*');
                     }
+                    else throw new Exception("There isn`t forbidden words in your text!");
                 }
             }
             return $" Your new text: {newText}\n Quantity of forbidden words: {counter}";

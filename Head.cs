@@ -1,7 +1,7 @@
 ﻿
 namespace ArraysStrings
 {
-    internal partial class ArraysStrings
+    public partial class Procedures
     {
         static void Main()
         {

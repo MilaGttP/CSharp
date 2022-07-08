@@ -1,7 +1,7 @@
 ﻿
 namespace ArraysStrings
 {
-    internal partial class ArraysStrings
+    public partial class Procedures
     {
         public static int MaxOneD(int row, int[] arr)
         {
@@ -36,12 +36,12 @@ namespace ArraysStrings
         public static int Maximum(int[] A, int[,] B)
         {
             if (MaxOneD(5, A) == MaxTwoD(3, 4, B)) return MaxOneD(5, A);
-            else return 0;
+            else throw new Exception("There isn`t common maximum in this arrays!");
         }
         public static int Minimum(int[] A, int[,] B)
         {
             if (MinOneD(5, A) == MinTwoD(3, 4, B)) return MinOneD(5, A);
-            else return 0;
+            else throw new Exception("There isn`t common minimum in this arrays!");
         }
         public static int SumOneD(int[] A)
         {
@@ -81,7 +81,7 @@ namespace ArraysStrings
         public static int EvenA(int[] A)
         {
             int sum = 0;
-            for (int i = 0; i < A[0]; i++)
+            for (int i = 0; i < A.Length; i++)
                 if (A[i] % 2 == 0) sum += A[i];
             return sum;
         }

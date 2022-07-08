@@ -3,7 +3,7 @@ using static System.Console;
 
 namespace ArraysStrings
 {
-    internal partial class ArraysStrings
+    public partial class Procedures
     {
         static void ABArraysTest()
         {
@@ -47,8 +47,8 @@ namespace ArraysStrings
             int sum = 0;
             int min = MinTwoD(5, 5, arr);
             int max = MaxTwoD(5, 5, arr);
-            for(int i = 0; i < 5; i++)
-                for(int j = 0; j < 5; j++)
+            for (int i = 0; i < 5; i++)
+                for (int j = 0; j < 5; j++)
                     if (arr[i, j] < max && arr[i, j] > min) sum += arr[i, j];
             WriteLine($"Sum is: {sum}");
         }
@@ -111,7 +111,7 @@ namespace ArraysStrings
         }
         static void MathOperationsTest()
         {
-            Write("Enter your expression -> "); 
+            Write("Enter your expression -> ");
             string expression = Convert.ToString(ReadLine());
             Write($"Result: {MathOper(expression)}");
         }
