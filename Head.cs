@@ -15,16 +15,16 @@ namespace Classes
         }
         static void TestHW()
         {
-            //SquareSymbolTest();
-            //PalindromTest();
-            //FilterArrayTest();
-            //ClassWebsiteTest();
-            //ClassMagazineTest();
+            SquareSymbolTest();
+            PalindromTest();
+            FilterArrayTest();
+            ClassWebsiteTest();
+            ClassMagazineTest();
             ClassShopTest();
         }
         static void Main()
         {
-            //TestLab();
+            TestLab();
             TestHW();
         }
     }

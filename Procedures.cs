@@ -78,7 +78,7 @@ namespace Classes
             System.Text.StringBuilder filtering = new System.Text.StringBuilder(forFilter);
             for (int i = 0; i < original.Length; i++)
             {
-                for(int j = 0; j < filtering.Length; j++)
+                for (int j = 0; j < filtering.Length; j++)
                 {
                     if (original[i] == filtering[j]) original[i] = ' ';
                 }
