@@ -37,7 +37,17 @@ namespace AbsClasses
         }
         static void ShapeClassesTest()
         {
-
+            Rectangle rectangle = new Rectangle(1.4, 5.2);
+            WriteLine($"Rectangle`s square: {rectangle.SearchSquare()}");
+            Circle circle = new Circle();
+            circle.EnterRadius();
+            WriteLine($"Circle`s square: {circle.SearchSquare()}");
+            RectangularTriangle rectangularTriangle = new RectangularTriangle();
+            rectangularTriangle.EnterWidthLength();
+            WriteLine($"Rectangular triangle`s square: {rectangularTriangle.SearchSquare()}");
+            Trapeze trapeze = new Trapeze();
+            trapeze.EnterWidthLengthHeight();
+            WriteLine($"Trapeze`s square: {trapeze.SearchSquare()}");
         }
     }
 }
