@@ -1,7 +1,7 @@
 ﻿
 namespace DelegatesAndEvents
 {
-    public delegate T ArrayDelegate<T>();
+    public delegate string ArrayDelegate ();
     public class Array
     {
         private int[] array { get; set; }
@@ -22,11 +22,19 @@ namespace DelegatesAndEvents
                 if (item % 2 != 0) stringBuilder.Append(item);
             return stringBuilder.ToString();
         }
-        public string GetSimpleNumbers()
+        public static Boolean CheckOnePrime(int number)
+        {
+            for (int i = 2; i * i <= number; i++)
+                if (number % i == 0)
+                    return false;
+            if (number == 0 || number == 1) return false;
+            return true;
+        }
+        public string GetPrimeNumbers()
         {
             System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
-            foreach (int item in array)
-                if ((item == 1) || (item / 1 == 0 && item / item == 0)) stringBuilder.Append(item);
+            foreach (var item in array)
+                if (CheckOnePrime(item)) stringBuilder.Append(item);
             return stringBuilder.ToString();
         }
         public string GetFibonacci()
