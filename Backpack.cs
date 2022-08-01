@@ -30,5 +30,5 @@ namespace AnonMethodsAndLambda
             else if (volume > Volume) throw new ArgumentException($"{name}'s volume is more than backpack`s volume!");
             else throw new NullReferenceException();
         }
-    }
+    }    
 }
