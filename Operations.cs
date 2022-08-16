@@ -1,19 +1,41 @@
 ﻿
-using System;
-using System.Linq;
-
 namespace LINQToObject
 {
     public static class Operations
     {
-        public static int[] FirstPositiveLastNegative(this int[] sequency)
+        public static string FirstPositiveLastNegative(this int[] sequency)
         {
-            var result = from number in sequency
-                         group number by number > 0 into posRes
-                         group number by number < 0 into negRes
-                         from pos in posRes select pos.First();
-                         from neg in negRes select neg.Last();
-            return result;
+            var posNums = from item in sequency where item > 0 select item;
+            var negNums = from item in sequency where item < 0 select item;
+            return $"{posNums.First()}, {negNums.Last()}";
+        }
+        public static int FirstPositiveInSequency(this int[] sequency, UInt32 number)
+        {
+            return sequency.FirstOrDefault(item => (item > 0) && (item % 10 == number));
+        }
+        public static string LastRowOfSequency(this string[] sequency, UInt32 number)
+        {
+            IEnumerable <string> fitNumberWords = from i in sequency let words = i.Split(' ', ';', ',')
+                                                  from w in words where w.Count() == number select w;
+            string digitWords = null;
+            if (fitNumberWords != null)
+            {
+                foreach (string word in fitNumberWords)
+                {
+                    if (char.IsDigit(word[0]) == true)
+                    {
+                        int len = word.Length;
+                        digitWords = $"{word[len - 5]}{word[len - 4]}{word[len - 3]}{word[len - 2]}{word[len - 1]}";
+                    }
+                }
+                return digitWords;
+            }
+            else throw new Exception("Not found.");
+        }
+        public static IEnumerable <int> PositiveSequency(this int[] sequency)
+        {
+            var lastDigits = from number in sequency where number > 0 select number % 10;
+            return lastDigits.Distinct();
         }
     }
 }

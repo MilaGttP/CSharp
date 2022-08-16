@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp", "CSharp.csproj", "{B434548D-1DF0-43BA-8D2B-D90140C0276E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQToObjectTesting", "..\LINQToObjectTesting\LINQToObjectTesting.csproj", "{55D2222E-1641-4EDE-A618-26A9DB4D540B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B434548D-1DF0-43BA-8D2B-D90140C0276E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B434548D-1DF0-43BA-8D2B-D90140C0276E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B434548D-1DF0-43BA-8D2B-D90140C0276E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55D2222E-1641-4EDE-A618-26A9DB4D540B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55D2222E-1641-4EDE-A618-26A9DB4D540B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55D2222E-1641-4EDE-A618-26A9DB4D540B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55D2222E-1641-4EDE-A618-26A9DB4D540B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
