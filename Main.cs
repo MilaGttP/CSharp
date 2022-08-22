@@ -14,7 +14,10 @@ namespace FileOperations
         }
         public static void HWTesting()
         {
-            
+            SearchByMaskTest();
+            DeleteByMaskTest();
+            DeleteSubDirectoriesTest();
+            ShowAllByPathTest();
         }
         public static void Main()
         {

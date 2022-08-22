@@ -1,4 +1,5 @@
 ﻿
+using System.Threading.Tasks;
 using static System.Console;
 
 namespace FileOperations
@@ -48,6 +49,29 @@ namespace FileOperations
         }
 
         // *-------- HW -------------*
-
+        public static void SearchByMaskTest()
+        {
+            Write("Enter a mask -> "); string mask = ReadLine();
+            Write("Enter a directory path -> "); string path = ReadLine();
+            foreach (var item in HWOperations.SearchByMask(path, mask))
+                WriteLine(item);
+        }
+        public static void DeleteByMaskTest()
+        {
+            Write("Enter a mask -> "); string mask = ReadLine();
+            Write("Enter a directory path -> "); string path = ReadLine();
+            HWOperations.DeleteFilesByMask(path, mask);
+        }
+        public static void DeleteSubDirectoriesTest()
+        {
+            Write("Enter a root path -> "); string rootPath = ReadLine();
+            HWOperations.DeleteSubDirectories(rootPath);
+        }
+        public static void ShowAllByPathTest()
+        {
+            Write("Enter a path -> "); string path = ReadLine();
+            foreach (var item in HWOperations.ShowAllByPath(path))
+                WriteLine(item);
+        }
     }
 }

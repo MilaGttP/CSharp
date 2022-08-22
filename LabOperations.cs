@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace FileOperations
 {
-    public partial class LabOperations
+    public class LabOperations
     {
         public static bool IsPrime(int number)
         {
